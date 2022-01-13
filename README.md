@@ -1,11 +1,5 @@
 
-# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm [Practice Environemnt for CKA/CKAD and CKS Exams]
-
-## Documentation
-
-Refer this link for documentation: https://devopscube.com/kubernetes-cluster-vagrant/
-
-If you are preparing for CKA, CKAD, CKS or KCNA exam, save $57 using code **SCOFFER15** at https://kube.promo/latest
+# Vagrantfile and Scripts to Automate Kubernetes Setup using Kubeadm 
 
 ## Prerequisites
 
