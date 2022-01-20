@@ -30,7 +30,11 @@ or you can copy the config file to .kube directory.
 cp config ~/.kube/
 ```
 
-## Kubernetes Dashboard URL -- ignore this
+## Kubernetes Dashboard URL
+
+To access the dashboard on your local workstation you need to create a secure channel to your k8 cluster.
+
+Run : kubectl proxy
 
 ```shell
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=kubernetes-dashboard
