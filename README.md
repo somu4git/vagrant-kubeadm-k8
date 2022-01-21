@@ -47,7 +47,7 @@ Vagrant up will create the admin user token and saves in the configs directory.
 ```shell
 cd vagrant-kubeadm-k8
 cd configs
-cat token
+cat login_token
 ```
 
 ## To shutdown the cluster, 
