@@ -42,7 +42,7 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 
 ## Kubernetes login token
 
-Vagrant up will create the admin user token and saves in the configs directory.
+Vagrant up will create the k8-admin user token and saves in the configs directory.
 
 ```shell
 cd vagrant-kubeadm-k8
