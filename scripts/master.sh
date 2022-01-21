@@ -75,6 +75,35 @@ EOF
 
 kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}" >> /vagrant/configs/token
 
+# Create Dashboard User k8-admin
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: k8-admin
+  namespace: kube-system
+EOF
+
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: k8-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: k8-admin
+    namespace: kube-system
+EOF
+
+
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep k8-admin | awk '{print $1}') >> /vagrant/configs/login_token
+
+
 sudo -i -u vagrant bash << EOF
 mkdir -p /home/vagrant/.kube
 sudo cp -i /vagrant/configs/config /home/vagrant/.kube/
