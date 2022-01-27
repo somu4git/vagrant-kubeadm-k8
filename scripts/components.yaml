@@ -132,7 +132,6 @@ spec:
     spec:
       containers:
       - args:
-        - /metrics-server
         - --cert-dir=/tmp
         - --secure-port=4443
         - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
